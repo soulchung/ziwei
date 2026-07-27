@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
 <meta name="theme-color" content="#7c2d12" />
-<title>紫微命盤手機版 v27</title>
+<title>紫微命盤手機版 v30</title>
 <style>
 :root{
   --bg:#f6f3ee;--surface:#fffdfa;--ink:#27231f;--muted:#756d64;--line:#d8d0c6;
@@ -388,6 +388,115 @@ button,input,select{font:inherit} button{min-height:44px;cursor:pointer}
  .natal4{font-size:7px!important}
 }
 
+
+/* v28：手機命盤再放大文字、壓縮留白、中央區精簡，提升九宮可讀性 */
+@media(max-width:700px){
+  .chart-shell{padding:4px!important}
+  .chart-toolbar{gap:4px!important;margin-bottom:4px!important}
+  .flow-controls{gap:4px!important;padding-top:4px!important}
+  .chart-viewport{border-radius:0!important;background:#f0ebe3!important}
+  .palace{padding:2px!important;gap:1px!important;border-width:1px!important}
+  .palace .head{gap:2px!important;align-items:center!important;margin-bottom:0!important}
+  .palace-title{min-width:0!important;gap:2px!important}
+  .explain-btn{min-height:18px!important;padding:1px 4px!important;font-size:8px!important;border-radius:4px!important}
+  .palace .stem{font-size:10px!important;line-height:1!important}
+  .palace .branch{font-size:13px!important;line-height:1!important}
+
+  .layer-stack{margin:0!important;gap:1px!important}
+  .layer-grid{gap:1px!important}
+  .layer-pair-row{gap:1px!important}
+  .layer-chip{grid-template-columns:23px minmax(0,1fr)!important;min-height:14px!important;padding:0 1px!important;border-radius:3px!important;border-width:1px!important}
+  .layer-chip .layer-key{font-size:6px!important;line-height:1!important;letter-spacing:-.2px!important}
+  .layer-chip .layer-name{font-size:7.8px!important;line-height:1!important;gap:1px!important;letter-spacing:-.2px!important}
+  .layer-chip .mini-ming{font-size:6px!important;padding:0 2px!important;border-radius:6px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;align-content:start!important;overflow:visible!important;margin-top:1px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:1px!important;font-size:10.6px!important;font-weight:900!important;line-height:1!important;padding:1px 1px!important;border-radius:3px!important;min-height:0!important;white-space:nowrap!important;overflow:hidden!important}
+  .star .star-name{line-height:1!important;letter-spacing:-.2px!important}
+  .star.major-star{font-size:10.8px!important;background:#fff7e9!important;border:1px solid #a97943!important}
+  .star.assist-star{font-size:10.4px!important;background:#f6f0e6!important;border:1px solid #c9b9a7!important}
+  .star.sha-star{font-size:10.4px!important;background:#f3e9dd!important;border:1px solid #bc9d82!important}
+  .star.minor-star{font-size:10px!important;background:#f5f1ea!important;border:1px solid #d0c3b5!important}
+  .tag4{width:9px!important;height:9px!important;font-size:5.5px!important}
+  .natal4{font-size:6.6px!important;padding:0!important}
+
+  .center{padding:4px!important;gap:4px!important;overflow:auto!important}
+  .center h2{font-size:14px!important;line-height:1.05!important}
+  .notice{display:none!important}
+  .legend{display:none!important}
+  .info-grid{grid-template-columns:1fr!important;gap:3px!important}
+  .info{padding:4px!important;border-radius:6px!important;font-size:9px!important;line-height:1.2!important}
+  .info b{font-size:9px!important}
+  .core-warning,.three-summary{font-size:9px!important;line-height:1.2!important;padding:4px!important}
+
+  .flow-navigator{margin-top:2px!important}
+}
+@media(max-width:420px){
+  .layer-chip{grid-template-columns:21px minmax(0,1fr)!important}
+  .layer-chip .layer-key{font-size:5.8px!important}
+  .layer-chip .layer-name{font-size:7.2px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:9.8px!important}
+  .star.minor-star{font-size:9.4px!important}
+  .tag4{width:8px!important;height:8px!important;font-size:5px!important}
+  .natal4{font-size:6px!important}
+  .info{font-size:8.4px!important}
+}
+
+
+/* v29：依實機截圖校正，手機縮放後仍維持可讀字級 */
+@media(max-width:700px){
+  .palace{padding:5px!important;gap:3px!important}
+  .palace .head{min-height:30px!important;gap:4px!important;align-items:center!important}
+  .explain-btn{min-height:28px!important;padding:3px 8px!important;font-size:13px!important;border-radius:6px!important}
+  .palace .stem{font-size:19px!important;line-height:1!important}
+  .palace .branch{font-size:25px!important;line-height:1!important}
+
+  .layer-stack{margin:1px 0 3px!important}
+  .layer-grid{gap:3px!important}
+  .layer-pair-row{gap:3px!important}
+  .layer-chip{grid-template-columns:42px minmax(0,1fr)!important;min-height:31px!important;padding:2px 4px!important;border-radius:6px!important}
+  .layer-chip .layer-key{font-size:13px!important;line-height:1!important;letter-spacing:0!important}
+  .layer-chip .layer-name{font-size:17px!important;line-height:1!important;gap:2px!important;letter-spacing:0!important}
+  .layer-chip .mini-ming{font-size:10px!important;padding:1px 4px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px!important;align-content:start!important;margin-top:2px!important;overflow:visible!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:2px!important;
+    font-size:22px!important;font-weight:950!important;line-height:1!important;
+    min-height:27px!important;padding:2px 4px!important;border-radius:5px!important;
+    white-space:nowrap!important;overflow:hidden!important;
+  }
+  .star .star-name{font-size:22px!important;line-height:1!important;letter-spacing:-.3px!important}
+  .star.major-star{background:#fff7e9!important;border:2px solid #a97943!important;color:#5c2e17!important}
+  .star.assist-star{background:#f6f0e6!important;border:2px solid #c9b9a7!important;color:#5d4534!important}
+  .star.sha-star{background:#f3e9dd!important;border:2px solid #bc9d82!important;color:#6f3e28!important}
+  .star.minor-star{background:#f5f1ea!important;border:2px solid #d0c3b5!important;color:#4d433b!important}
+  .tag4{width:20px!important;height:20px!important;font-size:12px!important}
+  .natal4{font-size:14px!important;padding:0 1px!important}
+
+  .center{padding:8px!important;gap:6px!important}
+  .center h2{font-size:20px!important;line-height:1.1!important}
+  .info-grid{gap:5px!important}
+  .info{padding:6px!important;font-size:13px!important;line-height:1.25!important}
+  .info b{font-size:13px!important}
+  .core-warning,.three-summary{font-size:12px!important;line-height:1.25!important;padding:6px!important}
+}
+@media(max-width:420px){
+  .palace{padding:4px!important}
+  .explain-btn{font-size:12px!important;min-height:25px!important;padding:2px 6px!important}
+  .palace .stem{font-size:18px!important}
+  .palace .branch{font-size:23px!important}
+  .layer-chip{grid-template-columns:38px minmax(0,1fr)!important;min-height:28px!important;padding:2px 3px!important}
+  .layer-chip .layer-key{font-size:12px!important}
+  .layer-chip .layer-name{font-size:15px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:20px!important;min-height:25px!important;padding:2px 3px!important}
+  .star .star-name{font-size:20px!important}
+  .tag4{width:18px!important;height:18px!important;font-size:11px!important}
+  .natal4{font-size:13px!important}
+  .center h2{font-size:18px!important}
+  .info{font-size:12px!important}
+}
+
 </style>
 <style id="v23-hotfix">
 .bottom-nav{grid-template-columns:repeat(5,1fr)!important}
@@ -504,6 +613,115 @@ button,input,select{font:inherit} button{min-height:44px;cursor:pointer}
 @media(max-width:420px){
  .star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:10px!important;padding:1px 2px!important}
  .natal4{font-size:7px!important}
+}
+
+
+/* v28：手機命盤再放大文字、壓縮留白、中央區精簡，提升九宮可讀性 */
+@media(max-width:700px){
+  .chart-shell{padding:4px!important}
+  .chart-toolbar{gap:4px!important;margin-bottom:4px!important}
+  .flow-controls{gap:4px!important;padding-top:4px!important}
+  .chart-viewport{border-radius:0!important;background:#f0ebe3!important}
+  .palace{padding:2px!important;gap:1px!important;border-width:1px!important}
+  .palace .head{gap:2px!important;align-items:center!important;margin-bottom:0!important}
+  .palace-title{min-width:0!important;gap:2px!important}
+  .explain-btn{min-height:18px!important;padding:1px 4px!important;font-size:8px!important;border-radius:4px!important}
+  .palace .stem{font-size:10px!important;line-height:1!important}
+  .palace .branch{font-size:13px!important;line-height:1!important}
+
+  .layer-stack{margin:0!important;gap:1px!important}
+  .layer-grid{gap:1px!important}
+  .layer-pair-row{gap:1px!important}
+  .layer-chip{grid-template-columns:23px minmax(0,1fr)!important;min-height:14px!important;padding:0 1px!important;border-radius:3px!important;border-width:1px!important}
+  .layer-chip .layer-key{font-size:6px!important;line-height:1!important;letter-spacing:-.2px!important}
+  .layer-chip .layer-name{font-size:7.8px!important;line-height:1!important;gap:1px!important;letter-spacing:-.2px!important}
+  .layer-chip .mini-ming{font-size:6px!important;padding:0 2px!important;border-radius:6px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;align-content:start!important;overflow:visible!important;margin-top:1px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:1px!important;font-size:10.6px!important;font-weight:900!important;line-height:1!important;padding:1px 1px!important;border-radius:3px!important;min-height:0!important;white-space:nowrap!important;overflow:hidden!important}
+  .star .star-name{line-height:1!important;letter-spacing:-.2px!important}
+  .star.major-star{font-size:10.8px!important;background:#fff7e9!important;border:1px solid #a97943!important}
+  .star.assist-star{font-size:10.4px!important;background:#f6f0e6!important;border:1px solid #c9b9a7!important}
+  .star.sha-star{font-size:10.4px!important;background:#f3e9dd!important;border:1px solid #bc9d82!important}
+  .star.minor-star{font-size:10px!important;background:#f5f1ea!important;border:1px solid #d0c3b5!important}
+  .tag4{width:9px!important;height:9px!important;font-size:5.5px!important}
+  .natal4{font-size:6.6px!important;padding:0!important}
+
+  .center{padding:4px!important;gap:4px!important;overflow:auto!important}
+  .center h2{font-size:14px!important;line-height:1.05!important}
+  .notice{display:none!important}
+  .legend{display:none!important}
+  .info-grid{grid-template-columns:1fr!important;gap:3px!important}
+  .info{padding:4px!important;border-radius:6px!important;font-size:9px!important;line-height:1.2!important}
+  .info b{font-size:9px!important}
+  .core-warning,.three-summary{font-size:9px!important;line-height:1.2!important;padding:4px!important}
+
+  .flow-navigator{margin-top:2px!important}
+}
+@media(max-width:420px){
+  .layer-chip{grid-template-columns:21px minmax(0,1fr)!important}
+  .layer-chip .layer-key{font-size:5.8px!important}
+  .layer-chip .layer-name{font-size:7.2px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:9.8px!important}
+  .star.minor-star{font-size:9.4px!important}
+  .tag4{width:8px!important;height:8px!important;font-size:5px!important}
+  .natal4{font-size:6px!important}
+  .info{font-size:8.4px!important}
+}
+
+
+/* v29：依實機截圖校正，手機縮放後仍維持可讀字級 */
+@media(max-width:700px){
+  .palace{padding:5px!important;gap:3px!important}
+  .palace .head{min-height:30px!important;gap:4px!important;align-items:center!important}
+  .explain-btn{min-height:28px!important;padding:3px 8px!important;font-size:13px!important;border-radius:6px!important}
+  .palace .stem{font-size:19px!important;line-height:1!important}
+  .palace .branch{font-size:25px!important;line-height:1!important}
+
+  .layer-stack{margin:1px 0 3px!important}
+  .layer-grid{gap:3px!important}
+  .layer-pair-row{gap:3px!important}
+  .layer-chip{grid-template-columns:42px minmax(0,1fr)!important;min-height:31px!important;padding:2px 4px!important;border-radius:6px!important}
+  .layer-chip .layer-key{font-size:13px!important;line-height:1!important;letter-spacing:0!important}
+  .layer-chip .layer-name{font-size:17px!important;line-height:1!important;gap:2px!important;letter-spacing:0!important}
+  .layer-chip .mini-ming{font-size:10px!important;padding:1px 4px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px!important;align-content:start!important;margin-top:2px!important;overflow:visible!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:2px!important;
+    font-size:22px!important;font-weight:950!important;line-height:1!important;
+    min-height:27px!important;padding:2px 4px!important;border-radius:5px!important;
+    white-space:nowrap!important;overflow:hidden!important;
+  }
+  .star .star-name{font-size:22px!important;line-height:1!important;letter-spacing:-.3px!important}
+  .star.major-star{background:#fff7e9!important;border:2px solid #a97943!important;color:#5c2e17!important}
+  .star.assist-star{background:#f6f0e6!important;border:2px solid #c9b9a7!important;color:#5d4534!important}
+  .star.sha-star{background:#f3e9dd!important;border:2px solid #bc9d82!important;color:#6f3e28!important}
+  .star.minor-star{background:#f5f1ea!important;border:2px solid #d0c3b5!important;color:#4d433b!important}
+  .tag4{width:20px!important;height:20px!important;font-size:12px!important}
+  .natal4{font-size:14px!important;padding:0 1px!important}
+
+  .center{padding:8px!important;gap:6px!important}
+  .center h2{font-size:20px!important;line-height:1.1!important}
+  .info-grid{gap:5px!important}
+  .info{padding:6px!important;font-size:13px!important;line-height:1.25!important}
+  .info b{font-size:13px!important}
+  .core-warning,.three-summary{font-size:12px!important;line-height:1.25!important;padding:6px!important}
+}
+@media(max-width:420px){
+  .palace{padding:4px!important}
+  .explain-btn{font-size:12px!important;min-height:25px!important;padding:2px 6px!important}
+  .palace .stem{font-size:18px!important}
+  .palace .branch{font-size:23px!important}
+  .layer-chip{grid-template-columns:38px minmax(0,1fr)!important;min-height:28px!important;padding:2px 3px!important}
+  .layer-chip .layer-key{font-size:12px!important}
+  .layer-chip .layer-name{font-size:15px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:20px!important;min-height:25px!important;padding:2px 3px!important}
+  .star .star-name{font-size:20px!important}
+  .tag4{width:18px!important;height:18px!important;font-size:11px!important}
+  .natal4{font-size:13px!important}
+  .center h2{font-size:18px!important}
+  .info{font-size:12px!important}
 }
 
 </style>
@@ -639,6 +857,115 @@ button,input,select{font:inherit} button{min-height:44px;cursor:pointer}
  .natal4{font-size:7px!important}
 }
 
+
+/* v28：手機命盤再放大文字、壓縮留白、中央區精簡，提升九宮可讀性 */
+@media(max-width:700px){
+  .chart-shell{padding:4px!important}
+  .chart-toolbar{gap:4px!important;margin-bottom:4px!important}
+  .flow-controls{gap:4px!important;padding-top:4px!important}
+  .chart-viewport{border-radius:0!important;background:#f0ebe3!important}
+  .palace{padding:2px!important;gap:1px!important;border-width:1px!important}
+  .palace .head{gap:2px!important;align-items:center!important;margin-bottom:0!important}
+  .palace-title{min-width:0!important;gap:2px!important}
+  .explain-btn{min-height:18px!important;padding:1px 4px!important;font-size:8px!important;border-radius:4px!important}
+  .palace .stem{font-size:10px!important;line-height:1!important}
+  .palace .branch{font-size:13px!important;line-height:1!important}
+
+  .layer-stack{margin:0!important;gap:1px!important}
+  .layer-grid{gap:1px!important}
+  .layer-pair-row{gap:1px!important}
+  .layer-chip{grid-template-columns:23px minmax(0,1fr)!important;min-height:14px!important;padding:0 1px!important;border-radius:3px!important;border-width:1px!important}
+  .layer-chip .layer-key{font-size:6px!important;line-height:1!important;letter-spacing:-.2px!important}
+  .layer-chip .layer-name{font-size:7.8px!important;line-height:1!important;gap:1px!important;letter-spacing:-.2px!important}
+  .layer-chip .mini-ming{font-size:6px!important;padding:0 2px!important;border-radius:6px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;align-content:start!important;overflow:visible!important;margin-top:1px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:1px!important;font-size:10.6px!important;font-weight:900!important;line-height:1!important;padding:1px 1px!important;border-radius:3px!important;min-height:0!important;white-space:nowrap!important;overflow:hidden!important}
+  .star .star-name{line-height:1!important;letter-spacing:-.2px!important}
+  .star.major-star{font-size:10.8px!important;background:#fff7e9!important;border:1px solid #a97943!important}
+  .star.assist-star{font-size:10.4px!important;background:#f6f0e6!important;border:1px solid #c9b9a7!important}
+  .star.sha-star{font-size:10.4px!important;background:#f3e9dd!important;border:1px solid #bc9d82!important}
+  .star.minor-star{font-size:10px!important;background:#f5f1ea!important;border:1px solid #d0c3b5!important}
+  .tag4{width:9px!important;height:9px!important;font-size:5.5px!important}
+  .natal4{font-size:6.6px!important;padding:0!important}
+
+  .center{padding:4px!important;gap:4px!important;overflow:auto!important}
+  .center h2{font-size:14px!important;line-height:1.05!important}
+  .notice{display:none!important}
+  .legend{display:none!important}
+  .info-grid{grid-template-columns:1fr!important;gap:3px!important}
+  .info{padding:4px!important;border-radius:6px!important;font-size:9px!important;line-height:1.2!important}
+  .info b{font-size:9px!important}
+  .core-warning,.three-summary{font-size:9px!important;line-height:1.2!important;padding:4px!important}
+
+  .flow-navigator{margin-top:2px!important}
+}
+@media(max-width:420px){
+  .layer-chip{grid-template-columns:21px minmax(0,1fr)!important}
+  .layer-chip .layer-key{font-size:5.8px!important}
+  .layer-chip .layer-name{font-size:7.2px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:9.8px!important}
+  .star.minor-star{font-size:9.4px!important}
+  .tag4{width:8px!important;height:8px!important;font-size:5px!important}
+  .natal4{font-size:6px!important}
+  .info{font-size:8.4px!important}
+}
+
+
+/* v29：依實機截圖校正，手機縮放後仍維持可讀字級 */
+@media(max-width:700px){
+  .palace{padding:5px!important;gap:3px!important}
+  .palace .head{min-height:30px!important;gap:4px!important;align-items:center!important}
+  .explain-btn{min-height:28px!important;padding:3px 8px!important;font-size:13px!important;border-radius:6px!important}
+  .palace .stem{font-size:19px!important;line-height:1!important}
+  .palace .branch{font-size:25px!important;line-height:1!important}
+
+  .layer-stack{margin:1px 0 3px!important}
+  .layer-grid{gap:3px!important}
+  .layer-pair-row{gap:3px!important}
+  .layer-chip{grid-template-columns:42px minmax(0,1fr)!important;min-height:31px!important;padding:2px 4px!important;border-radius:6px!important}
+  .layer-chip .layer-key{font-size:13px!important;line-height:1!important;letter-spacing:0!important}
+  .layer-chip .layer-name{font-size:17px!important;line-height:1!important;gap:2px!important;letter-spacing:0!important}
+  .layer-chip .mini-ming{font-size:10px!important;padding:1px 4px!important}
+
+  .stars{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px!important;align-content:start!important;margin-top:2px!important;overflow:visible!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:2px!important;
+    font-size:22px!important;font-weight:950!important;line-height:1!important;
+    min-height:27px!important;padding:2px 4px!important;border-radius:5px!important;
+    white-space:nowrap!important;overflow:hidden!important;
+  }
+  .star .star-name{font-size:22px!important;line-height:1!important;letter-spacing:-.3px!important}
+  .star.major-star{background:#fff7e9!important;border:2px solid #a97943!important;color:#5c2e17!important}
+  .star.assist-star{background:#f6f0e6!important;border:2px solid #c9b9a7!important;color:#5d4534!important}
+  .star.sha-star{background:#f3e9dd!important;border:2px solid #bc9d82!important;color:#6f3e28!important}
+  .star.minor-star{background:#f5f1ea!important;border:2px solid #d0c3b5!important;color:#4d433b!important}
+  .tag4{width:20px!important;height:20px!important;font-size:12px!important}
+  .natal4{font-size:14px!important;padding:0 1px!important}
+
+  .center{padding:8px!important;gap:6px!important}
+  .center h2{font-size:20px!important;line-height:1.1!important}
+  .info-grid{gap:5px!important}
+  .info{padding:6px!important;font-size:13px!important;line-height:1.25!important}
+  .info b{font-size:13px!important}
+  .core-warning,.three-summary{font-size:12px!important;line-height:1.25!important;padding:6px!important}
+}
+@media(max-width:420px){
+  .palace{padding:4px!important}
+  .explain-btn{font-size:12px!important;min-height:25px!important;padding:2px 6px!important}
+  .palace .stem{font-size:18px!important}
+  .palace .branch{font-size:23px!important}
+  .layer-chip{grid-template-columns:38px minmax(0,1fr)!important;min-height:28px!important;padding:2px 3px!important}
+  .layer-chip .layer-key{font-size:12px!important}
+  .layer-chip .layer-name{font-size:15px!important}
+  .star,.star.major-star,.star.assist-star,.star.sha-star,.star.minor-star{font-size:20px!important;min-height:25px!important;padding:2px 3px!important}
+  .star .star-name{font-size:20px!important}
+  .tag4{width:18px!important;height:18px!important;font-size:11px!important}
+  .natal4{font-size:13px!important}
+  .center h2{font-size:18px!important}
+  .info{font-size:12px!important}
+}
+
 </style>
 </head>
 <body>
@@ -694,7 +1021,7 @@ button,input,select{font:inherit} button{min-height:44px;cursor:pointer}
     <section class="page" id="chartPage">
       <div class="segment" id="periodTabs"></div>
       <div class="chart-shell card">
-        <div class="chart-toolbar"><div class="subtle">命盤自動符合螢幕。<span class="gesture-tip">雙指縮放｜單指拖曳｜雙擊還原</span></div><div class="flow-controls"><label class="flow-field">流盤日期<input id="flowDate" type="date" min="1900-01-31" max="2300-12-31"></label><label class="flow-field">流盤時間<select id="flowHour"></select></label><button class="btn small primary" id="updateFlow" type="button">更新流盤</button><span class="subtle" id="flowHint">依流盤日期計算虛歲、大限、流年與小限</span></div></div>
+        <div class="chart-toolbar"><div class="subtle">命盤自動符合螢幕。<span class="gesture-tip">雙指縮放｜單指拖曳｜雙擊還原</span></div><div class="flow-controls"><label class="flow-field">流盤日期<input id="flowDate" type="date" min="1900-01-31" max="2300-12-31"></label><label class="flow-field">流盤時間<select id="flowHour"></select></label><button class="btn small primary" id="updateFlow" type="button">更新流盤</button><span class="subtle" id="flowHint">開啟命盤時會自動使用裝置當下日期與時間；也可手動修改後更新</span></div></div>
         <div class="chart-viewport" id="chartViewport"><div class="chart-canvas" id="chartCanvas"><div class="chart" id="chart"></div></div></div>
       </div>
       <div class="flow-navigator card" id="flowNavigator"></div>
@@ -811,7 +1138,7 @@ function renderCases(){
  $('caseList').innerHTML=arr.length?arr.map(c=>`<article class="case-card card"><div><div class="case-name">${esc(c.name)}</div><div class="meta">${c.gender}｜${c.calendar} ${c.year}/${c.month}/${c.day}｜${c.hour}時<br>最後開啟：${fmtDate(c.lastOpened)}</div></div><div class="actions"><button class="btn small primary" onclick="openCase('${c.id}')">開啟</button><button class="btn small" onclick="editCase('${c.id}')">修改</button><button class="btn small danger" onclick="askDelete('${c.id}')">刪除</button></div></article>`).join(''):`<div class="empty card">${q?'找不到符合的個案':'目前尚未建立個案，請按右上角「新增命盤」。'}</div>`;
 }
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));let titles={casesPage:['個案清單','手機版原型'],formPage:[editingId?'修改個案':'新增命盤','輸入出生資料'],chartPage:['命盤',currentCase()?.name||'尚未選擇個案'],conditionsPage:['條件庫','原始規則與案例觸發'],conditions2Page:['條件庫2','本案例觸發結果'],trendPage:['TD趨勢',currentCase()?.name||'尚未選擇個案'],dataPage:['Excel資料庫',EXCEL_DATA.source+'｜v27']};$('topTitle').textContent=titles[id][0];$('topSub').textContent=titles[id][1];$('addBtn').style.display=id==='casesPage'?'inline-flex':'none';if(id==='chartPage'){autoFitChart=true;renderChart();setTimeout(()=>fitChartToScreen(true),0)}if(id==='conditionsPage')renderConditions(1);if(id==='conditions2Page')renderConditions(2);if(id==='trendPage')renderTrendPage();if(id==='dataPage')renderDataPage()}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));let titles={casesPage:['個案清單','手機版原型'],formPage:[editingId?'修改個案':'新增命盤','輸入出生資料'],chartPage:['命盤',currentCase()?.name||'尚未選擇個案'],conditionsPage:['條件庫','原始規則與案例觸發'],conditions2Page:['條件庫2','本案例觸發結果'],trendPage:['TD趨勢',currentCase()?.name||'尚未選擇個案'],dataPage:['Excel資料庫',EXCEL_DATA.source+'｜v30']};$('topTitle').textContent=titles[id][0];$('topSub').textContent=titles[id][1];$('addBtn').style.display=id==='casesPage'?'inline-flex':'none';if(id==='chartPage'){autoFitChart=true;renderChart();setTimeout(()=>fitChartToScreen(true),0)}if(id==='conditionsPage')renderConditions(1);if(id==='conditions2Page')renderConditions(2);if(id==='trendPage')renderTrendPage();if(id==='dataPage')renderDataPage()}
 function currentCase(){return cases.find(c=>c.id===currentId)}
 function getLayerLabels(c,period){
  const base=(c.palaces||placeholderPalaces());
@@ -844,7 +1171,19 @@ function getPeriodInfo(c){
  return ((c.periodInfo&&c.periodInfo[currentPeriod])||(FLOW_PERIOD_INFO[c.id]&&FLOW_PERIOD_INFO[c.id][currentPeriod])||'流盤資料尚未計算');
 }
 
-function openCase(id){currentId=id;let c=currentCase();c.lastOpened=new Date().toISOString();save();currentPeriod='本命';selectedPalaceIndex=null;showPage('chartPage')}
+function setCaseFlowToNow(c){
+ if(!c)return c;
+ const now=new Date();
+ return calculateCase({...c,flowDate:localDateString(now),flowHour:now.getHours(),lastOpened:now.toISOString()});
+}
+function openCase(id){
+ currentId=id;
+ let idx=cases.findIndex(x=>x.id===id);
+ if(idx<0)return;
+ cases[idx]=setCaseFlowToNow(cases[idx]);
+ save();
+ currentPeriod='本命';selectedPalaceIndex=null;showPage('chartPage');
+}
 function editCase(id){editingId=id;let c=cases.find(x=>x.id===id);$('formTitle').textContent='修改個案';$('editNotice').style.display='block';['name','gender','calendar','year','month','day','hour'].forEach(k=>$(k).value=c[k]);showPage('formPage')}
 function resetForm(){editingId=null;$('caseForm').reset();$('calendar').value='西元';$('editNotice').style.display='none';$('formError').style.display='none';$('formTitle').textContent='新增命盤'}
 function formData(){return {name:$('name').value.trim(),gender:$('gender').value,calendar:$('calendar').value,year:+$('year').value,month:+$('month').value,day:+$('day').value,hour:+$('hour').value}}
@@ -939,7 +1278,7 @@ function calculateCase(input){
 function createFrom(d){let now=new Date().toISOString();return calculateCase({...d,id:'case-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),created:now,lastOpened:now,demo:false})}
 
 function placeholderPalaces(){const branches=['巳','午','未','申','酉','戌','亥','子','丑','寅','卯','辰'],stems=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸','甲','乙'],names=['子女','夫妻','兄弟','命宮','父母','福德','田宅','官祿','僕役','遷移','疾厄','財帛'];return branches.map((b,i)=>({branch:b,stem:stems[i],name:names[i],stars:[]}))}
-function completeSave(c){c=calculateCase(c);let idx=cases.findIndex(x=>x.id===c.id);if(idx>=0)cases[idx]=c;else cases.push(c);currentId=c.id;save();renderCases();resetForm();showPage('chartPage');if(c.calcError)updateStorageStatus(`個案已儲存，但排盤有錯誤：${c.calcError}`,true)}
+function completeSave(c){const now=new Date();c=calculateCase({...c,flowDate:localDateString(now),flowHour:now.getHours(),lastOpened:now.toISOString()});let idx=cases.findIndex(x=>x.id===c.id);if(idx>=0)cases[idx]=c;else cases.push(c);currentId=c.id;save();renderCases();resetForm();showPage('chartPage');if(c.calcError)updateStorageStatus(`個案已儲存，但排盤有錯誤：${c.calcError}`,true)}
 $('caseForm').addEventListener('submit',e=>{e.preventDefault();let d=formData();if(!valid(d)){$('formError').style.display='block';return}$('formError').style.display='none';let duplicate=cases.find(c=>c.id!==editingId&&c.name===d.name&&c.gender===d.gender&&c.calendar===d.calendar&&c.year===d.year&&c.month===d.month&&c.day===d.day&&c.hour===d.hour);let c;if(editingId){let old=cases.find(x=>x.id===editingId);c=calculateCase({...old,...d,lastOpened:new Date().toISOString(),demo:false})}else c=createFrom(d);if(duplicate){pendingCase=c;pendingDuplicateId=duplicate.id;$('duplicateModal').classList.add('show')}else completeSave(c)});
 document.querySelectorAll('[data-dup]').forEach(b=>b.onclick=()=>{let a=b.dataset.dup;$('duplicateModal').classList.remove('show');if(a==='cancel'){pendingCase=null;return}if(a==='new'){pendingCase.id='case-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);completeSave(pendingCase)}if(a==='overwrite'){let old=cases.find(x=>x.id===pendingDuplicateId);pendingCase.id=old.id;pendingCase.created=old.created;completeSave(pendingCase)}pendingCase=null});
 function askDelete(id){pendingDeleteId=id;$('deleteModal').classList.add('show')}document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(b.dataset.del==='confirm'){cases=cases.filter(c=>c.id!==pendingDeleteId);if(currentId===pendingDeleteId)currentId=cases[0]?.id||null;save();renderCases()}$('deleteModal').classList.remove('show')});
@@ -1461,7 +1800,7 @@ $('exportCases').onclick=()=>{let blob=new Blob([JSON.stringify({version:9,expor
 $('importCases').onclick=()=>$('importCasesFile').click();
 $('importCasesFile').onchange=async e=>{let file=e.target.files?.[0];if(!file)return;try{let parsed=JSON.parse(await file.text()),incoming=Array.isArray(parsed)?parsed:parsed.cases;if(!Array.isArray(incoming)||!incoming.length)throw new Error('備份內沒有個案');cases=incoming.map(c=>calculateCase(c));currentId=cases[0]?.id||null;save();renderCases();updateStorageStatus(`已匯入 ${cases.length} 筆個案`)}catch(err){updateStorageStatus(`匯入失敗：${err.message||err}`,true)}e.target.value=''};
 $('addBtn').onclick=()=>{resetForm();showPage('formPage')};$('cancelForm').onclick=()=>{resetForm();showPage('casesPage')};$('searchInput').oninput=renderCases;$('sortSelect').onchange=renderCases;document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
-populateHours();setupChartGestures();cases=cases.map(c=>calculateCase(c));$('updateFlow').onclick=()=>{let c=currentCase();if(!c)return;c.flowDate=$('flowDate').value;c.flowHour=+$('flowHour').value;let updated=calculateCase(c),idx=cases.findIndex(x=>x.id===c.id);cases[idx]=updated;save();selectedPalaceIndex=null;renderChart();if($('flowHint')){$('flowHint').textContent=`已更新：${updated.flowGanzhi||''}流年｜虛歲${updated.virtualAge||'—'}歲`;setTimeout(()=>{if($('flowHint'))$('flowHint').textContent='依流盤日期計算虛歲、大限、流年與小限'},2600)}};renderCases();renderTabs();save();restoreCasesFromDb();
+populateHours();setupChartGestures();cases=cases.map(c=>calculateCase(c));$('updateFlow').onclick=()=>{let c=currentCase();if(!c)return;c.flowDate=$('flowDate').value;c.flowHour=+$('flowHour').value;let updated=calculateCase(c),idx=cases.findIndex(x=>x.id===c.id);cases[idx]=updated;save();selectedPalaceIndex=null;renderChart();if($('flowHint')){$('flowHint').textContent=`已更新：${updated.flowGanzhi||''}流年｜虛歲${updated.virtualAge||'—'}歲`;setTimeout(()=>{if($('flowHint'))$('flowHint').textContent='開啟命盤時會自動使用裝置當下日期與時間；也可手動修改後更新'},2600)}};renderCases();renderTabs();save();restoreCasesFromDb();
 </script>
 </body>
 </html>
